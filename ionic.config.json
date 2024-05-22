@@ -1,0 +1,7 @@
+{
+  "name": "bns-challenge",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
