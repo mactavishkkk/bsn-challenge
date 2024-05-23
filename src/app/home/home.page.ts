@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { getAllPokemons, getPokemonById } from 'src/services/pokemon';
 import { PokemonService } from '../services/pokemon.service';
 
 @Component({
@@ -16,7 +15,8 @@ export class HomePage {
     this._pokeService.getAll().subscribe((response: any) => {
       this.Pokemons = response.results.map((result: any, index: number) => ({
         id: index + 1,
-        name: result.name
+        name: result.name,
+        image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png`
       }));
     });
   }
