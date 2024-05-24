@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { PokemonService } from '../services/pokemon.service';
 import { map, switchMap } from 'rxjs';
 
@@ -12,7 +13,7 @@ export class HomePage {
   currentPage: number = 1;
   totalPages: number = 5;
 
-  constructor(private _pokeService: PokemonService) { }
+  constructor(private _pokeService: PokemonService, private router: Router) { }
 
   ngOnInit() {
     this.loadPokemons(this.currentPage);
@@ -43,4 +44,7 @@ export class HomePage {
     this.loadPokemons(page);
   }
 
+  goToDetails(id: number) {
+    this.router.navigate(['/details', id]);
+  }
 }

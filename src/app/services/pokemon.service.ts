@@ -17,11 +17,15 @@ export class PokemonService {
   }
 
   getDetails(id: number): Observable<any> {
+    return this.http.get(`https://pokeapi.co/api/v2/pokemon/${id}/`);
+  }
+
+  getDetailsForm(id: number): Observable<any> {
     return this.http.get(`https://pokeapi.co/api/v2/pokemon-form/${id}/`);
   }
 
   getAllWithDetails(ids: number[]): Observable<any[]> {
-    const requests = ids.map(id => this.getDetails(id));
+    const requests = ids.map(id => this.getDetailsForm(id));
     return forkJoin(requests);
   }
 }

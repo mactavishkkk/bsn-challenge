@@ -1,0 +1,16 @@
+<app-header title="Pokemon"></app-header>
+
+<ion-content [fullscreen]="true">
+  <ion-button class="back-button"(click)="goBack()" fill="outline">Back to Home</ion-button>
+  <ion-card *ngIf="Pokemon" class="pokemon-card">
+    <ion-card-header>
+      <ion-card-title>{{ Pokemon.name }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <img [src]="Pokemon.sprites.front_default" alt="{{ Pokemon.name }} image" />
+      <p>Height: {{ Pokemon.height }}</p>
+      <p>Weight: {{ Pokemon.weight }}</p>
+      <p>Base Experience: {{ Pokemon.base_experience }}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
