@@ -5,13 +5,39 @@ ion-content {
   align-items: center;
 }
 
+ion-card.pokemon-card {
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 8px;
+}
+
+ion-card.pokemon-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  position: relative;
+}
+
+.loading-gif {
+  width: 400px;
+  height: auto;
+}
+
+
 .pokemon-image {
   width: 50%;
   height: auto;
 }
 
 .card-title {
-  text-align: center;
+  color: var(--ion-color-pikachu-blue)
 }
 
 .card-image {
