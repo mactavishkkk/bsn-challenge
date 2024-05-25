@@ -1,0 +1,17 @@
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 13px;
+    color: var(--ion-color-pikachu-blue);
+  }
+  
+  ion-button {
+    --color: var(--ion-color-pikachu-blue);
+  }
+  
+  span {
+    font-size: 1.2rem;
+  }
+  

@@ -1,0 +1,12 @@
+.footer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  background-color: #FFDE00;
+}
+
+.footer-container p {
+  margin: 0;
+  color: var(--ion-color-pikachu-blue)
+}

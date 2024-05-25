@@ -1,0 +1,26 @@
+ion-toolbar {
+    --background: var(--ion-color-pikachu);
+    --color: var(--ion-color-pikachu-contrast);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    perspective: 1000px;
+}
+
+.header-logo {
+    height: 80px;
+    transition: transform 0.3s ease;
+    margin: 10px;
+}
+
+.header-logo:hover {
+    transform: rotateY(10deg) translateZ(10px);
+    cursor: pointer;
+}
