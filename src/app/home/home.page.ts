@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { PokemonService } from '../services/pokemon.service';
 import { map, switchMap } from 'rxjs';
+import { LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -13,10 +14,19 @@ export class HomePage {
   currentPage: number = 1;
   totalPages: number = 5;
 
-  constructor(private _pokeService: PokemonService, private router: Router) { }
+  constructor(private _pokeService: PokemonService, private router: Router, private loadingController: LoadingController) { }
 
   ngOnInit() {
+    this.presentLoading();
     this.loadPokemons(this.currentPage);
+  }
+  
+  async presentLoading() {
+    const loading = await this.loadingController.create({
+      message: 'Loading...',
+      duration: 1500,
+    });
+    await loading.present();
   }
 
   loadPokemons(page: number) {

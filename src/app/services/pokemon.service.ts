@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { forkJoin, Observable } from 'rxjs';
+import { forkJoin, map, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -17,11 +17,21 @@ export class PokemonService {
   }
 
   getDetails(id: number): Observable<any> {
-    return this.http.get(`https://pokeapi.co/api/v2/pokemon/${id}/`);
+    const pokeUrl = `${this.apiUrl}/pokemon/${id}/`;
+    const pokeSpeciesUrl = `${this.apiUrl}/pokemon-species/${id}/`;
+
+    return forkJoin([
+      this.http.get(pokeUrl),
+      this.http.get(pokeSpeciesUrl),
+    ]).pipe(
+      map(([pokeUrl, pokeSpeciesUrl]) => {
+        return { ...pokeUrl, ...pokeSpeciesUrl };
+      })
+    );
   }
 
   getDetailsForm(id: number): Observable<any> {
-    return this.http.get(`https://pokeapi.co/api/v2/pokemon-form/${id}/`);
+    return this.http.get(`${this.apiUrl}/pokemon-form/${id}/`);
   }
 
   getAllWithDetails(ids: number[]): Observable<any[]> {

@@ -1,5 +1,9 @@
 <div class="pagination-container">
-  <ion-button  fill="outline" (click)="previousPage()" [disabled]="currentPage === 1">Back</ion-button>
+  <ion-button  fill="clear" (click)="previousPage()" [disabled]="currentPage === 1">
+    <ion-icon name="arrow-back-outline"></ion-icon>
+  </ion-button>
   <span>Página {{ currentPage }} de {{ totalPages }}</span>
-  <ion-button  fill="outline" (click)="nextPage()" [disabled]="currentPage === totalPages">Next</ion-button>
+  <ion-button  fill="clear" (click)="nextPage()" [disabled]="currentPage === totalPages">
+    <ion-icon name="arrow-forward-outline"></ion-icon>
+  </ion-button>
 </div>
