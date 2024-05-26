@@ -11,7 +11,7 @@
         <p>Ao digitar seu e-mail abaixo e clicar em 'Receber', você receberá um pokemon aleatório.</p>
         <ion-item>
           <ion-label position="floating">Email</ion-label>
-          <ion-input type="email"></ion-input>
+          <ion-input type="email" [(ngModel)]="email"></ion-input>
         </ion-item>
         <ion-button expand="full"(click)="sendEmail()">Receber</ion-button>
       </ion-col>
