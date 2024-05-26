@@ -54,6 +54,10 @@ export class HomePage {
     this.loadPokemons(page);
   }
 
+  goToBonus() {
+    this.router.navigate(['/bonus']);
+  }
+
   goToDetails(id: number) {
     this.router.navigate(['/details', id]);
   }

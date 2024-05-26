@@ -1,0 +1,37 @@
+ion-content {
+    --background: var(--ion-color-pikachu-contrast);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-content {
+    display: flex;
+    justify-content: center;
+    width: 75%;
+    text-align: center;
+  
+    ion-col {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    p {
+      margin-bottom: 20px;
+      color: black
+    }
+  
+    ion-item, ion-label {
+      width: 100%;
+      max-width: 400px;
+      margin-bottom: 5px;
+    }
+  
+    ion-button {
+      width: 100%;
+      max-width: 200px;
+    }
+  }
+  
